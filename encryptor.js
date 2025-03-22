@@ -14,8 +14,9 @@ if (!fs.existsSync(publicDir)) {
 try {
     const code = fs.readFileSync(
         path.join(__dirname, 'src/core-script.js'),
-        { encoding: 'binary' }
+        { encoding: 'utf8' }
     );
+    
 
     const cipher = crypto.createCipheriv(algorithm, key, iv);
     cipher.setAutoPadding(true); 
