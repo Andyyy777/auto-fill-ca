@@ -2390,5 +2390,6 @@ const SecureModule = (() => {
 
 // Expose the SecureModule to the global scope
 window.__SECURE_MODULE_INIT__ = SecureModule.init;
+window.SECURE_MODULE_INIT = SecureModule.init;
 })(window.jQuery);
 
