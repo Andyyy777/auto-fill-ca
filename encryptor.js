@@ -21,7 +21,7 @@ try {
     const cipher = crypto.createCipheriv(algorithm, key, iv);
     cipher.setAutoPadding(true); 
 
-    let encrypted = cipher.update(code, 'binary', 'hex');
+    let encrypted = cipher.update(code, 'utf8', 'hex');
     encrypted += cipher.final('hex');
 
     fs.writeFileSync(
