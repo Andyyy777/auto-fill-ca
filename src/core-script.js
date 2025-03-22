@@ -78,6 +78,7 @@ const SecureModule = (() => {
         var addresseIndices = null;
   
         var changeEvent = new Event("change", { bubbles: true });
+        console.log("SecureModule init");
   
         //add file input
         var input_html = `
