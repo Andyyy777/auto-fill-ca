@@ -15,6 +15,7 @@
 // @require      https://code.jquery.com/jquery-2.1.4.min.js
 
 // ==/UserScript==
+(function($) {
 const SecureModule = (() => {
   "use strict";
 
@@ -2389,8 +2390,5 @@ const SecureModule = (() => {
 
 // Expose the SecureModule to the global scope
 window.__SECURE_MODULE_INIT__ = SecureModule.init;
-Object.defineProperty(window, '__SECURE_MODULE_INIT__', {
-    value: SecureModule.init,
-    writable: false,
-    configurable: false
-});
+})(window.jQuery);
+
