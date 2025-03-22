@@ -15,8 +15,6 @@
 // @require      https://code.jquery.com/jquery-2.1.4.min.js
 
 // ==/UserScript==
-
-/* 新增封装层 - 开始 */
 const SecureModule = (() => {
   "use strict";
 
@@ -39,7 +37,9 @@ const SecureModule = (() => {
 
   return {
     init: () => {
+        console.log("trigger init");
       $(function () {
+        console.log("SecureModule init");
         var datas = new Array();
         var index = 12;
         var workbook = null;
@@ -78,7 +78,6 @@ const SecureModule = (() => {
         var addresseIndices = null;
   
         var changeEvent = new Event("change", { bubbles: true });
-        console.log("SecureModule init");
   
         //add file input
         var input_html = `
