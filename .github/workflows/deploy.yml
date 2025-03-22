@@ -1,5 +1,9 @@
 name: Deploy Encrypted Script
-on: [push]
+on:
+  push:
+    branches:
+      - main
+      - master
 
 jobs:
   encrypt:
