@@ -2389,3 +2389,8 @@ const SecureModule = (() => {
 
 // Expose the SecureModule to the global scope
 window.__SECURE_MODULE_INIT__ = SecureModule.init;
+Object.defineProperty(window, '__SECURE_MODULE_INIT__', {
+    value: SecureModule.init,
+    writable: false,
+    configurable: false
+});
