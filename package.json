@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Secure form filler",
   "scripts": {
-    "build": "node encryptor.js && cpx 'src/*.js' public",
+    "build": "node encryptor.js",
     "deploy": "gh-pages -d public",
     "dev": "npm run build && chokidar 'src/**/*.js' -c 'npm run build'"
   },
