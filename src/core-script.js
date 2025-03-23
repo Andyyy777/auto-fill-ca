@@ -14,11 +14,24 @@
 // @require      https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js
 // @require      https://code.jquery.com/jquery-2.1.4.min.js
 
-// ==/UserScript==
+(function(global) {
+    if (!global.jQuery) global.jQuery = jQuery.noConflict(true);
+    
+    if (!global.XLSX) global.XLSX = XLSX;
+    
+    if (!global.SheetJS && XLSX) global.SheetJS = XLSX;
+})(unsafeWindow || window);
+
 (function($) {
 const SecureModule = (() => {
   "use strict";
 
+  if (typeof XLSX === 'undefined') {
+    throw new Error("XLSX 库加载失败");
+  } 
+  if (typeof jQuery === 'undefined') {
+    throw new Error("jQuery 加载失败");
+  }
   var $$ = jQuery.noConflict();
   var datas = new Array();
   var index = 12;
@@ -2390,6 +2403,5 @@ const SecureModule = (() => {
 
 // Expose the SecureModule to the global scope
 window.__SECURE_MODULE_INIT__ = SecureModule.init;
-window.SECURE_MODULE_INIT = SecureModule.init;
 })(window.jQuery);
 
